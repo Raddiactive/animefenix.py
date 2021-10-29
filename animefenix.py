@@ -5,7 +5,7 @@ import requests
 
 
 
-'''By Raddiactive#1886'''
+''' By Raddiactive#1886 '''
 
 session = requests.Session()
 class Client():
