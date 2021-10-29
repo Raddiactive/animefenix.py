@@ -1,6 +1,5 @@
 import os
 from time import sleep
-
 os.system("clear")
 
 print("\033[1;37;46m Empezando instalación de requests ❯\033[0;0m\n")
