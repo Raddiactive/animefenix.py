@@ -51,6 +51,6 @@ if __name__ == '__main__':
         config = json.load(file)
         username = config["user"]
         password = config["pass"]
-    main(username,password)
+        main(username,password)
     
     
