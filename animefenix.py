@@ -34,8 +34,10 @@ class Client():
         """
         serie = serie.lower()
         serie = serie.strip()
-        serie = serie.replace(",","").replace(".","").replace("+","").replace("!","")
+        serie = serie.replace(",","").replace(".","-").replace("+","").replace("!","")
         serie = serie.replace("&","and").replace(" ","-").replace("/","-").replace("?","")
+        if "-" == serie[len(serie)-1:]:
+            serie = serie[:-1]
                 
         print(serie)
         self.i = 0
@@ -91,8 +93,10 @@ class Client():
 
         name = name.lower()
         name = name.strip()
-        name = name.replace(",","").replace(".","").replace("+","")
-        name = name.replace("&","and").replace(" ","-").replace("/","-")
+        name = name.replace(",","").replace(".","-").replace("+","").replace("!","")
+        name = name.replace("&","and").replace(" ","-").replace("/","-").replace("?","")
+        if "-" == name[len(name)-1:]:
+            name = name[:-1]
 
         self.req = session.get(f"https://www.animefenix.com/{name}")
         if self.req.status_code == 200:
@@ -119,8 +123,11 @@ class Client():
 
         name = name.lower()
         name = name.strip()
-        name = name.replace(",","").replace(".","").replace("+","")
-        name = name.replace("&","and").replace(" ","-").replace("/","-")
+        name = name.replace(",","").replace(".","-").replace("+","").replace("!","")
+        name = name.replace("&","and").replace(" ","-").replace("/","-").replace("?","")
+
+        if "-" == name[len(name)-1:]:
+            name = name[:-1]
     
         self.req = self.session.get(f"https://www.animefenix.com/ver/{name}-{chapter}")
         if self.req.status_code == 200:
@@ -217,8 +224,10 @@ class Client():
 
         name = name.lower()
         name = name.strip()
-        name = name.replace(",","").replace(".","").replace("+","")
-        name = name.replace("&","and").replace(" ","-").replace("/","-")
+        name = name.replace(",","").replace(".","-").replace("+","").replace("!","")
+        name = name.replace("&","and").replace(" ","-").replace("/","-").replace("?","")
+        if "-" == name[len(name)-1:]:
+            name = name[:-1]
 
         self.text = session.get(f"https://www.animefenix.com/{name}")
         if self.text.status_code == 200:
@@ -243,8 +252,10 @@ class Client():
         """
         name = name.lower()
         name = name.strip()
-        name = name.replace(",","").replace(".","").replace("+","")
-        name = name.replace("&","and").replace(" ","-").replace("/","-")
+        name = name.replace(",","").replace(".","-").replace("+","").replace("!","")
+        name = name.replace("&","and").replace(" ","-").replace("/","-").replace("?","")
+        if "-" == name[len(name)-1:]:
+            name = name[:-1]
 
         self.i = 0
         self.x = 0
@@ -275,8 +286,10 @@ class Client():
 
         name = name.lower()
         name = name.strip()
-        name = name.replace(",","").replace(".","").replace("+","")
-        name = name.replace("&","and").replace(" ","-").replace("/","-")
+        name = name.replace(",","").replace(".","-").replace("+","").replace("!","")
+        name = name.replace("&","and").replace(" ","-").replace("/","-").replace("?","")
+        if "-" == name[len(name)-1:]:
+            name = name[:-1]
 
         self.i = 0
         self.x = 0
@@ -340,8 +353,10 @@ class Client():
 
         name = name.lower()
         name = name.strip()
-        name = name.replace(",","").replace(".","").replace("+","")
-        name = name.replace("&","and").replace(" ","-").replace("/","-")
+        name = name.replace(",","").replace(".","-").replace("+","").replace("!","")
+        name = name.replace("&","and").replace(" ","-").replace("/","-").replace("?","")
+        if "-" == name[len(name)-1:]:
+            name = name[:-1]
         
         self.req = session.get(f"https://www.animefenix.com/{name}")
         if self.req.status_code == 200:
@@ -365,8 +380,10 @@ class Client():
 
         name = name.lower()
         name = name.strip()
-        name = name.replace(",","").replace(".","").replace("+","")
-        name = name.replace("&","and").replace(" ","-").replace("/","-")
+        name = name.replace(",","").replace(".","-").replace("+","").replace("!","")
+        name = name.replace("&","and").replace(" ","-").replace("/","-").replace("?","")
+        if "-" == name[len(name)-1:]:
+            name = name[:-1]
 
         self.i = 0
         self.c = 1
@@ -401,8 +418,10 @@ class Client():
 
         name = name.lower()
         name = name.strip()
-        name = name.replace(",","").replace(".","").replace("+","")
-        name = name.replace("&","and").replace(" ","-").replace("/","-")
+        name = name.replace(",","").replace(".","-").replace("+","").replace("!","")
+        name = name.replace("&","and").replace(" ","-").replace("/","-").replace("?","")
+        if "-" == name[len(name)-1:]:
+            name = name[:-1]
 
         self.page = session.get(f"https://www.animefenix.com/ver/{name}-{cap}/descarga")
         if self.page.status_code == 200:
@@ -481,3 +500,4 @@ class Client():
 
             return self.total
         else: return self.page
+        
