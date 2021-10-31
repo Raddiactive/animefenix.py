@@ -8,7 +8,7 @@ import webbrowser
 
 def main(username:str, password:str):
     client = fenix.Client()
-    name = input("\n\033[1;36;40m Anime name ❯ \033[0;0m")
+    name = input("\n\033[1;36;40m Anime name ❯\033[0;0m ")
 
     with client.login(username=username,password=password,remember="Yes") as login:
         cap = client.anime_last_chapter(name)
@@ -28,11 +28,11 @@ def main(username:str, password:str):
             server = list(urls.keys())[i]
             print(f"\n\033[0;30;46m ❮ {server} ❯ \033[0;0m " + f"{link_color} {url} \033[0;0m" + f" {color} RESPONSE ❯ {response} \033[0;0m")
         
-        option = input("\n\033[1;36;40m Choose the option ❯ \033[0;0m")
-        if opTion != 0:
+        option = input("\n\033[1;36;40m Choose the option ❯\033[0;0m ")
+        if option != "0":
             url = (list(urls.values())[int(option)-1])
             webbrowser.get('google-chrome %s --incognito').open_new(url)
-
+        else: print("\n")
 
 if __name__ == '__main__':
     exists = False
@@ -40,8 +40,8 @@ if __name__ == '__main__':
         exists = True
 
     if exists == False:
-        user = input("\n\033[1;36;40m Write the username ❯ \033[0;0m")
-        password = input("\033[1;36;40m Write the password ❯ \033[0;0m")
+        user = input("\n\033[1;36;40m Write the username ❯\033[0;0m ")
+        password = input("\033[1;36;40m Write the password ❯\033[0;0m ")
         data = {"user":user, "pass":password}
 
         with open('config.json','w') as file:
@@ -52,5 +52,3 @@ if __name__ == '__main__':
         username = config["user"]
         password = config["pass"]
         main(username,password)
-    
-    
