@@ -5,7 +5,7 @@ import requests
 
 
 
-''' By Raddiactive#1886 '''
+'''By Raddiactive#1886'''
 
 session = requests.Session()
 class Client():
@@ -34,8 +34,8 @@ class Client():
         """
         serie = serie.lower()
         serie = serie.strip()
-        serie = serie.replace(",","").replace(".","").replace("+","")
-        serie = serie.replace("&","and").replace(" ","-").replace("/","-")
+        serie = serie.replace(",","").replace(".","").replace("+","").replace("!","")
+        serie = serie.replace("&","and").replace(" ","-").replace("/","-").replace("?","")
                 
         print(serie)
         self.i = 0
@@ -481,4 +481,3 @@ class Client():
 
             return self.total
         else: return self.page
-        
